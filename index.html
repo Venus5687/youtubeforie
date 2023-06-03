@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<head> <style type='text/css'>
+body {
+  background-color: black;
+}
+h1 {
+  color: white;
+font-family: Arial;
+}
+h3 {
+  color: white;
+font-family: Arial;
+}
+#embed-code {
+      visibility: hidden;
+    }
+</style> </head>
+<TITLE>YouTube for IE 9 to 11</TITLE>
+
+</HEAD>
+<BODY>
+<script>
+    function generateEmbedCode() {
+      var url = document.getElementById("url").value;
+      var videoId = url.split("v=")[1];
+      var embedCode = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoId + '" frameborder="0" allowfullscreen></iframe>';
+      document.getElementById("embed-code").value = embedCode;
+      document.getElementById("video").innerHTML = embedCode;
+    }
+  </script>
+<center>
+<h1>YouTube for Internet Explorer 9 to 11</h1>
+
+<h3>Enter the YouTube Watch ID here and the website will embed it!</h3>
+
+  <input type="text" id="url" name="url">
+  <button onclick="generateEmbedCode()">Watch!</button><br><br>
+<textarea id="embed-code" name="embed-code"></textarea><br><br>
+
+  <div id="video"></div>
+</BODY>
+</HTML>
